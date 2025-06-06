@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Your Profile</h2>
+                    
+                    <div class="text-center mb-4">
+                        {% if user.photo_url %}
+                            <img src="{{ user.photo_url }}" class="rounded-circle border border-primary" alt="Profile Picture" style="width: 120px; height: 120px; object-fit: cover;">
+                        {% else %}
+                            <i class="bi bi-person-circle display-1 text-primary"></i>
+                        {% endif %}
+                    </div>
+
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Email:</strong>
+                            <span>{{ user.email }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Display Name:</strong>
+                            <span>{{ user.display_name if user.display_name else 'Not set' }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>User ID (UID):</strong>
+                            <span class="text-muted small">{{ user.uid }}</span>
+                        </li>
+                        {# You can add more user info here if available, e.g., created_at #}
+                    </ul>
+
+                    <h4 class="mb-3">Settings</h4>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Theme:</strong>
+                            <div>
+                                <span class="badge text-bg-{{ 'dark' if theme == 'dark' else 'light' }} border">{{ theme|capitalize }}</span>
+                                <a href="{{ url_for('toggle_theme') }}" class="btn btn-sm btn-outline-secondary ms-3">
+                                    <i class="bi bi-circle-half me-1"></i> Toggle to {{ 'Light' if theme == 'dark' else 'Dark' }}
+                                </a>
+                            </div>
+                        </li>
+                        {# Future: Add other settings here, e.g., Change Password #}
+                    </ul>
+
+                    <div class="d-grid">
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-2"></i>Back to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

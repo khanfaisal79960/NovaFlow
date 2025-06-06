@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h1 class="display-4 fw-bold mb-4">Welcome to Project NovaFlow</h1>
+    <p class="lead mb-5">Your modern solution for streamlined project management. Organize, track, and collaborate with ease.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Get Started</a>
+        <a href="{{ url_for('login') }}" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+    </div>
+
+    <div class="mt-5 pt-5">
+        <p class="fs-5">Explore our features:</p>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Task Management</h3>
+                    <p>Break down projects into manageable tasks, assign them to team members, and track progress effortlessly.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded">
+                    <i class="bi bi-people"></i>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Team Collaboration</h3>
+                    <p>Communicate, share files, and keep everyone on the same page with integrated collaboration tools.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded">
+                    <i class="bi bi-graph-up"></i>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Progress Tracking</h3>
+                    <p>Visualize project timelines, identify bottlenecks, and ensure deadlines are met with insightful dashboards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

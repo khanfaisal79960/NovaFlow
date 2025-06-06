@@ -1,0 +1,332 @@
+:root {
+    /* Light Theme Variables */
+    --background-color-light: #f8f9fa; /* Bootstrap's bg-light */
+    --text-color-light: #212529; /* Bootstrap's text-dark */
+    --header-bg-light: #ffffff;
+    --footer-bg-light: #f8f9fa;
+    --border-color-light: #dee2e6;
+    --card-bg-light: #ffffff;
+    --icon-bg-light: #e9ecef;
+}
+
+.dark-theme {
+    /* Dark Theme Variables */
+    --background-color-dark: #212529; /* Deep dark background */
+    --text-color-dark: #e9ecef; /* Light text for contrast */
+    --header-bg-dark: #343a40; /* Darker header */
+    --footer-bg-dark: #343a40;
+    --border-color-dark: #495057;
+    --card-bg-dark: #2c313a;
+    --icon-bg-dark: #495057;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+/* Light Theme Styles */
+body.light-theme {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body.light-theme .header,
+body.light-theme .footer {
+    background-color: var(--header-bg-light);
+    border-color: var(--border-color-light) !important; /* Override Bootstrap border */
+}
+
+body.light-theme .navbar-brand,
+body.light-theme .nav-link,
+body.light-theme .dropdown-toggle,
+body.light-theme .form-check-label {
+    color: var(--text-color-light) !important; /* Ensure text color is consistent */
+}
+
+body.light-theme .border-bottom {
+    border-bottom-color: var(--border-color-light) !important;
+}
+
+body.light-theme .border-top {
+    border-top-color: var(--border-color-light) !important;
+}
+
+body.light-theme .shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+body.light-theme .social-links img {
+    filter: brightness(0.4) saturate(0.5); /* Consistent dark shade for light theme */
+}
+
+body.light-theme .btn-outline-secondary {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+
+body.light-theme .btn-outline-secondary:hover {
+    background-color: var(--text-color-light);
+    color: var(--background-color-light);
+}
+
+body.light-theme .icon-square {
+    background-color: var(--icon-bg-light) !important;
+    color: var(--text-color-light) !important;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .header,
+body.dark-theme .footer {
+    background-color: var(--header-bg-dark);
+    border-color: var(--border-color-dark) !important;
+}
+
+body.dark-theme .navbar-brand,
+body.dark-theme .nav-link,
+body.dark-theme .dropdown-toggle,
+body.dark-theme .form-check-label {
+    color: var(--text-color-dark) !important;
+}
+
+body.dark-theme .link-body-emphasis {
+    color: var(--text-color-dark) !important;
+}
+
+body.dark-theme .link-secondary {
+    color: #adb5bd !important; /* Lighter secondary text for dark mode */
+}
+
+body.dark-theme .dropdown-menu {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+body.dark-theme .dropdown-item {
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .dropdown-item:hover,
+body.dark-theme .dropdown-item:focus {
+    background-color: #495057;
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .dropdown-divider {
+    border-top-color: var(--border-color-dark);
+}
+
+body.dark-theme .border-bottom {
+    border-bottom-color: var(--border-color-dark) !important;
+}
+
+body.dark-theme .border-top {
+    border-top-color: var(--border-color-dark) !important;
+}
+
+body.dark-theme .shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.3)!important; /* Darker shadow for dark mode */
+}
+
+body.dark-theme .btn-primary {
+    background-color: #6a0dad; /* A vibrant purple */
+    border-color: #6a0dad;
+}
+body.dark-theme .btn-primary:hover {
+    background-color: #7b2edc;
+    border-color: #7b2edc;
+}
+
+body.dark-theme .btn-outline-secondary {
+    color: var(--text-color-dark);
+    border-color: var(--text-color-dark);
+}
+
+body.dark-theme .btn-outline-secondary:hover {
+    background-color: var(--text-color-dark);
+    color: var(--background-color-dark);
+}
+
+body.dark-theme .icon-square {
+    background-color: var(--icon-bg-dark) !important;
+    color: var(--text-color-dark) !important;
+}
+
+/* General Styles (independent of theme) */
+.social-links img {
+    /* For light theme, let's make them a subtle dark color */
+    filter: brightness(0.4) saturate(0.5); /* Makes them darker and less colorful for light mode */
+    transition: filter 0.3s ease;
+}
+
+body.dark-theme .social-links img {
+    filter: invert(1) grayscale(1) brightness(1.5); /* White/light for dark mode */
+}
+
+.social-links a:hover img {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(200deg) brightness(1.5); /* Example hover effect remains the same */
+}
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animations */
+.container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Background graphics - subtle gradients for Gen Z vibe */
+body.light-theme::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(200, 230, 255, 0.3), rgba(255, 240, 200, 0.3)); /* Soft pastel */
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+body.dark-theme::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 0, 50, 0.5), rgba(0, 50, 50, 0.5)); /* Deep, rich colors */
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode scrollbar */
+body.dark-theme ::-webkit-scrollbar-track {
+    background: #333;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme .display-4,
+body.dark-theme .display-5 {
+    color: #ffffff !important; /* Pure white for headings in dark mode */
+}
+
+/* Card styling for auth forms */
+.card {
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-theme .card {
+    background-color: var(--card-bg-light);
+    border-color: var(--border-color-light);
+}
+
+body.dark-theme .card {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .card .form-label {
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .card .form-control {
+    background-color: #3e444c; /* Slightly lighter input background in dark mode */
+    border-color: var(--border-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-theme .card .form-control:focus {
+    background-color: #3e444c;
+    border-color: #6a0dad; /* Primary color on focus */
+    color: var(--text-color-dark);
+    box-shadow: 0 0 0 0.25rem rgba(106, 13, 173, 0.25);
+}
+
+/* Dark Theme Specific Adjustments for Muted Text */
+body.dark-theme .text-muted {
+    color: #a0a0a0 !important; /* A light gray for muted text in dark mode */
+}
+
+/* Ensure card text also uses appropriate color if it's not text-muted */
+body.dark-theme .card-text {
+    color: var(--text-color-dark); /* Ensure general card text is visible */
+}
+
+/* You might already have this for general body text, but double-check */
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark); /* Ensure default text color for dark theme */
+}
+
+/* Dark Theme Specific Adjustments for Muted Text */
+body.dark-theme .text-muted {
+    color: #a0a0a0 !important; /* A light gray for muted text in dark mode */
+}
+
+body.dark-theme .text-body-secondary {
+    color: #b0b0b0 !important; /* A slightly lighter gray for secondary body text in dark mode */
+}
+
+/* Ensure card text also uses appropriate color if it's not text-muted */
+body.dark-theme .card-text {
+    color: var(--text-color-dark); /* Ensure general card text is visible */
+}
+
+/* You might already have this for general body text, but double-check */
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark); /* Ensure default text color for dark theme */
+}
