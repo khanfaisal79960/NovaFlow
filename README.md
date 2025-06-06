@@ -53,6 +53,8 @@
 
 ## 🚀 Getting Started
 
+Download firebase-adminsdk from google firebase
+
 ```bash
 git clone https://github.com/khanfaisal79960/NovaFlow.git
 cd NovaFlow
