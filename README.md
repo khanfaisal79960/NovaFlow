@@ -53,11 +53,12 @@
 
 ## 🚀 Getting Started
 
-Download firebase-adminsdk from google firebase
+
 
 ```bash
 git clone https://github.com/khanfaisal79960/NovaFlow.git
 cd NovaFlow
+Download `firebase-adminsdk.json` from google firebase and put it in root directory
 python -m venv venv
 source venv/bin/activate  # or .\venv\Scripts\activate on Windows
 pip install -r requirements.txt
